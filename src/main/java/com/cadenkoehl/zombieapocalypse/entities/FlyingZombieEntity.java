@@ -73,7 +73,7 @@ public abstract class FlyingZombieEntity extends ZombieApocalypseEntity {
             zombie.attackTargetWithLightning();
             for (ServerWorld world : zombie.getServer().getWorlds()) {
                 if(world.getDimension().hasCeiling()) continue;
-                world.setWeather(0, 1000, true, false);
+                world.setWeather(0, 1000, true, true);
             }
         }
 
