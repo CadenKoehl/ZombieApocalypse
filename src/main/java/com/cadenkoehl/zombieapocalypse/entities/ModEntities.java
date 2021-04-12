@@ -42,14 +42,20 @@ public class ModEntities {
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, IceFireballEntity::new).build());
 
     public static void registerEntities() {
+
+        //Entity registry
         FabricDefaultAttributeRegistry.register(FIRE_ZOMBIE, ZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(ICE_ZOMBIE, ZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(AIR_ZOMBIE, ZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(TNT_ZOMBIE, ZombieEntity.createZombieAttributes());
 
+        //Overworld spawns
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, FIRE_ZOMBIE, 10, 1, 5);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, ICE_ZOMBIE, 10, 1, 5);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, AIR_ZOMBIE, 10, 1, 5);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, TNT_ZOMBIE, 10, 1, 5);
+
+        //Nether spawns
+        BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), SpawnGroup.MONSTER, FIRE_ZOMBIE, 10, 1, 5);
     }
 }
