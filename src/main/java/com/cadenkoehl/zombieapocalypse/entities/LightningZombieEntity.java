@@ -7,9 +7,9 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.world.World;
 
-public class AirZombieEntity extends FlyingZombieEntity {
+public class LightningZombieEntity extends FlyingZombieEntity {
 
-    public AirZombieEntity(EntityType<? extends ZombieEntity> entityType, World world) {
+    public LightningZombieEntity(EntityType<? extends ZombieEntity> entityType, World world) {
         super(entityType, world);
     }
 

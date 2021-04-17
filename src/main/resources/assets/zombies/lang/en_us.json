@@ -1,15 +1,24 @@
 {
   "entity.zombies.fire_zombie": "Fire Zombie",
   "entity.zombies.ice_zombie": "Ice Zombie",
-  "entity.zombies.air_zombie": "Air Zombie",
+  "entity.zombies.lightning_zombie": "Lightning Zombie",
   "entity.zombies.tnt_zombie": "TNT Zombie",
-  "entity.zombies.ice_fireball": "Ice Fireball",
+  "entity.zombies.earth_zombie": "Earth Zombie",
 
   "effect.zombies.frost": "Frost",
+  "effect.zombies.earth_suffocation": "Earth Suffocation",
+
+  "enchantment.zombies.winter_aspect": "Winter Aspect",
+
+  "item.zombies.inferno_rod": "Inferno Rod",
+  "item.zombies.lightning_rod": "Lightning Rod",
+  "item.zombies.earth_staff": "Earth Staff",
+  "item.zombies.tnt_gun": "TNT Gun",
 
   "item.zombies.fire_zombie_spawn_egg": "Fire Zombie Spawn Egg",
   "item.zombies.ice_zombie_spawn_egg": "Ice Zombie Spawn Egg",
-  "item.zombies.air_zombie_spawn_egg": "Air Zombie Spawn Egg",
-  "item.zombies.tnt_zombie_spawn_egg": "TNT Zombie Spawn Egg"
+  "item.zombies.lightning_zombie_spawn_egg": "Lightning Zombie Spawn Egg",
+  "item.zombies.tnt_zombie_spawn_egg": "TNT Zombie Spawn Egg",
+  "item.zombies.earth_zombie_spawn_egg": "Earth Zombie Spawn Egg"
 
 }

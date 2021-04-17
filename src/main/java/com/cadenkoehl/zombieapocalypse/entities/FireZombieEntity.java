@@ -16,7 +16,7 @@ public class FireZombieEntity extends ZombieApocalypseEntity {
     @Override
     protected void initGoals() {
         super.initGoals();
-        this.goalSelector.add(1, new ZombieShootFireballGoal(this, "fire"));
+        this.goalSelector.add(1, new ZombieShootFireballGoal(this));
     }
 
     @Override

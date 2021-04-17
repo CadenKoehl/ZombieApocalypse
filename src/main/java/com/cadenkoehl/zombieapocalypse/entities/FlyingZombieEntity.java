@@ -1,6 +1,5 @@
 package com.cadenkoehl.zombieapocalypse.entities;
 
-import net.fabricmc.fabric.mixin.biome.modification.BiomeWeatherAccessor;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.LivingEntity;
@@ -8,10 +7,8 @@ import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.ZombieEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 
 public abstract class FlyingZombieEntity extends ZombieApocalypseEntity {
 
@@ -40,6 +37,7 @@ public abstract class FlyingZombieEntity extends ZombieApocalypseEntity {
         target.setVelocity(vel.x, vel.y + 2, vel.z);
     }
 
+    @Override
     public boolean handleFallDamage(float fallDistance, float damageMultiplier) {
         return false;
     }
@@ -54,6 +52,7 @@ public abstract class FlyingZombieEntity extends ZombieApocalypseEntity {
         flyCooldown--;
     }
 
+    @Override
     public boolean isClimbing() {
         return false;
     }
@@ -71,15 +70,6 @@ public abstract class FlyingZombieEntity extends ZombieApocalypseEntity {
             zombie.flyCooldown = 300;
             zombie.startFlying();
             zombie.attackTargetWithLightning();
-            for (ServerWorld world : zombie.getServer().getWorlds()) {
-                if(world.getDimension().hasCeiling()) continue;
-                world.setWeather(0, 1000, true, true);
-            }
-        }
-
-        @Override
-        public void stop() {
-
         }
 
         @Override

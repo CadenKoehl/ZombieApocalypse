@@ -6,11 +6,11 @@ import net.minecraft.client.render.entity.ZombieEntityRenderer;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.util.Identifier;
 
-public class AirZombieEntityRenderer extends ZombieEntityRenderer {
+public class LightningZombieEntityRenderer extends ZombieEntityRenderer {
 
-    public static final Identifier TEXTURE = new Identifier(ZombieApocalypse.MOD_ID, "textures/entity/air_zombie.png");
+    public static final Identifier TEXTURE = new Identifier(ZombieApocalypse.MOD_ID, "textures/entity/lightning_zombie.png");
 
-    public AirZombieEntityRenderer(EntityRenderDispatcher entityRenderDispatcher) {
+    public LightningZombieEntityRenderer(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher);
     }
 

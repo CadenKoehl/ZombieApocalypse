@@ -5,8 +5,6 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.minecraft.client.render.entity.EntityRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -26,20 +24,20 @@ public class ModEntities {
             new Identifier(ZombieApocalypse.MOD_ID, "ice_zombie"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, IceZombieEntity::new).dimensions(EntityDimensions.fixed(1.0f, 2.0f)).build());
 
-    public static final EntityType<AirZombieEntity> AIR_ZOMBIE = Registry.register(
+    public static final EntityType<LightningZombieEntity> AIR_ZOMBIE = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(ZombieApocalypse.MOD_ID, "air_zombie"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, AirZombieEntity::new).dimensions(EntityDimensions.fixed(1.0f, 2.0f)).build());
+            new Identifier(ZombieApocalypse.MOD_ID, "lightning_zombie"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, LightningZombieEntity::new).dimensions(EntityDimensions.fixed(1.0f, 2.0f)).build());
 
     public static final EntityType<TNTZombieEntity> TNT_ZOMBIE = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier(ZombieApocalypse.MOD_ID, "tnt_zombie"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, TNTZombieEntity::new).dimensions(EntityDimensions.fixed(1.0f, 2.0f)).build());
 
-    public static final EntityType<IceFireballEntity> ICE_FIREBALL = Registry.register(
+    public static final EntityType<EarthZombieEntity> EARTH_ZOMBIE = Registry.register(
             Registry.ENTITY_TYPE,
-            new Identifier(ZombieApocalypse.MOD_ID, "ice_fireball"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MISC, IceFireballEntity::new).build());
+            new Identifier(ZombieApocalypse.MOD_ID, "earth_zombie"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, EarthZombieEntity::new).dimensions(EntityDimensions.fixed(1.0f, 2.0f)).build());
 
     public static void registerEntities() {
 
@@ -48,12 +46,14 @@ public class ModEntities {
         FabricDefaultAttributeRegistry.register(ICE_ZOMBIE, ZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(AIR_ZOMBIE, ZombieEntity.createZombieAttributes());
         FabricDefaultAttributeRegistry.register(TNT_ZOMBIE, ZombieEntity.createZombieAttributes());
+        FabricDefaultAttributeRegistry.register(EARTH_ZOMBIE, ZombieEntity.createZombieAttributes());
 
         //Overworld spawns
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, FIRE_ZOMBIE, 10, 1, 5);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, ICE_ZOMBIE, 10, 1, 5);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, AIR_ZOMBIE, 10, 1, 5);
         BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, TNT_ZOMBIE, 10, 1, 5);
+        BiomeModifications.addSpawn(BiomeSelectors.foundInOverworld(), SpawnGroup.MONSTER, EARTH_ZOMBIE, 10, 1, 5);
 
         //Nether spawns
         BiomeModifications.addSpawn(BiomeSelectors.foundInTheNether(), SpawnGroup.MONSTER, FIRE_ZOMBIE, 10, 1, 5);
